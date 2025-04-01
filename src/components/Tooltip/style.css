@@ -1,0 +1,88 @@
+.vk-tooltip {
+  --vk-popover-bg-color: var(--vk-bg-color-overlay);
+  --vk-popover-font-size: var(--vk-font-size-base);
+  --vk-popover-border-color: var(--vk-border-color);
+  --vk-popover-padding: 12px;
+  --vk-popover-border-radius: 4px;
+  display: inline-block;
+}
+
+.vk-tooltip .vk-tooltip__popper {
+  background: var(--vk-popover-bg-color);
+  border-radius: var(--vk-popover-border-radius);
+  border: 1px solid var(--vk-popover-border-color);
+  padding: var(--vk-popover-padding);
+  color: var(--vk-text-color-regular);
+  line-height: 1.4;
+  text-align: justify;
+  font-size: var(--vk-popover-font-size);
+  box-shadow: var(--vk-box-shadow-light);
+  word-break: break-all;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.vk-tooltip .vk-tooltip__popper #arrow,
+.vk-tooltip .vk-tooltip__popper #arrow::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  background: var(--vk-popover-bg-color);
+}
+
+.vk-tooltip .vk-tooltip__popper #arrow {
+  visibility: hidden;
+}
+
+.vk-tooltip .vk-tooltip__popper #arrow::before {
+  visibility: visible;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.vk-tooltip .vk-tooltip__popper[data-popper-placement^='top'] > #arrow {
+  bottom: -5px;
+}
+
+.vk-tooltip .vk-tooltip__popper[data-popper-placement^='bottom'] > #arrow {
+  top: -5px;
+}
+
+.vk-tooltip .vk-tooltip__popper[data-popper-placement^='left'] > #arrow {
+  right: -5px;
+}
+
+.vk-tooltip .vk-tooltip__popper[data-popper-placement^='right'] > #arrow {
+  left: -5px;
+}
+
+.vk-tooltip .vk-tooltip__popper[data-popper-placement^="top"] > #arrow::before {
+  border-right: 1px solid var(--vk-popover-border-color);
+  border-bottom: 1px solid var(--vk-popover-border-color);
+}
+
+.vk-tooltip .vk-tooltip__popper[data-popper-placement^="bottom"] > #arrow::before {
+  border-left: 1px solid var(--vk-popover-border-color);
+  border-top: 1px solid var(--vk-popover-border-color);
+}
+
+.vk-tooltip .vk-tooltip__popper[data-popper-placement^="left"] > #arrow::before {
+  border-right: 1px solid var(--vk-popover-border-color);
+  border-top: 1px solid var(--vk-popover-border-color);
+}
+
+.vk-tooltip .vk-tooltip__popper[data-popper-placement^="right"] > #arrow::before {
+  border-left: 1px solid var(--vk-popover-border-color);
+  border-bottom: 1px solid var(--vk-popover-border-color);
+}
+
+.vk-tooltip .fade-enter-active,
+.vk-tooltip .fade-leave-active {
+  transition: opacity var(--vk-transition-duration);
+}
+
+.vk-tooltip .fade-enter-from,
+.vk-tooltip .fade-leave-to {
+  opacity: 0;
+}

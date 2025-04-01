@@ -1,0 +1,20 @@
+{
+    "extends": "@vue/tsconfig/tsconfig.dom.json",
+    "include": ["src/index.ts", "src/components/**/*", "src/hooks/**/*"],
+    "exclude": ["src/**/__tests__/*"],
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./src/*"]
+      },
+      "types": ["vue-macros/macros-global" /* ... */]
+    },
+    "vueCompilerOptions": {
+      "plugins": ["vue-macros/volar"],
+    },
+    "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+  }
